@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venture Connect | Founder ↔ Investor Intelligence</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Traxcn + PitchBook Inspired</p>
+        <h1>Venture Connect</h1>
+        <p>
+          Discover high-fit opportunities across sectors, stages, and check sizes for founders and investors.
+        </p>
+      </div>
+      <div class="hero-chips">
+        <span>Angel</span>
+        <span>Family Office</span>
+        <span>VC</span>
+        <span>PE</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel controls">
+        <h2>Search Perspective</h2>
+        <div class="grid two">
+          <label>
+            I am a
+            <select id="roleSelect">
+              <option value="founder">Founder seeking investors</option>
+              <option value="investor">Investor seeking startups</option>
+            </select>
+          </label>
+          <label>
+            Stage
+            <select id="stageSelect"></select>
+          </label>
+          <label>
+            Sector
+            <select id="sectorSelect"></select>
+          </label>
+          <label>
+            Funding need / ticket size ($M)
+            <input id="amountInput" type="number" min="0" step="0.1" value="5" />
+          </label>
+        </div>
+        <fieldset>
+          <legend>Preferred terms (multi-select)</legend>
+          <div id="termsContainer" class="terms-grid"></div>
+        </fieldset>
+        <button id="runMatch">Find Best Matches</button>
+      </section>
+
+      <section class="panel insights">
+        <h2>Market Snapshot</h2>
+        <div id="snapshot" class="stats"></div>
+      </section>
+
+      <section class="panel results">
+        <h2>Top Matches</h2>
+        <p id="resultContext" class="muted"></p>
+        <div id="resultsList" class="cards"></div>
+      </section>
+    </main>
+
+    <template id="cardTemplate">
+      <article class="card">
+        <div class="card-head">
+          <h3></h3>
+          <span class="score"></span>
+        </div>
+        <p class="type"></p>
+        <p class="sector-stage"></p>
+        <p class="ticket"></p>
+        <p class="terms"></p>
+        <p class="note"></p>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
