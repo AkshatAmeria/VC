@@ -1,0 +1,30 @@
+{
+  "name": "chainfloat",
+  "version": "1.0.0",
+  "description": "ChainFloat supply chain finance demo with on-chain approval and LP financing",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node --test test/api.test.js",
+    "chain:compile": "hardhat compile",
+    "chain:deploy:base-sepolia": "hardhat run scripts/deploy.js --network baseSepolia",
+    "chain:deploy:polygon-amoy": "hardhat run scripts/deploy.js --network polygonAmoy"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.2",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
+    "@openzeppelin/contracts": "^5.0.2"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.6",
+    "supertest": "^7.0.0"
+  }
+}
