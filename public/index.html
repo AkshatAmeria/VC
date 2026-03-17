@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChainFloat</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>ChainFloat (Testnet)</h1>
+      <p>Invoice financing on Base Sepolia/Polygon Amoy with a minimal full-stack flow.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>1) Register / Login</h2>
+        <div class="grid">
+          <input id="name" placeholder="Name" />
+          <input id="email" placeholder="Email" />
+          <input id="password" type="password" placeholder="Password" />
+          <select id="role">
+            <option value="supplier">Supplier</option>
+            <option value="buyer">Buyer</option>
+            <option value="lp">Liquidity Provider</option>
+          </select>
+        </div>
+        <button id="registerBtn">Register</button>
+        <button id="loginBtn">Login</button>
+        <p id="session"></p>
+      </section>
+
+      <section class="card">
+        <h2>2) Supplier flow</h2>
+        <div class="grid">
+          <input id="invoiceNumber" placeholder="Invoice #" />
+          <input id="buyerEmail" placeholder="Buyer email" />
+          <input id="amountUSDC" type="number" placeholder="Amount USDC" />
+          <input id="dueDate" type="date" />
+          <input id="metadata" placeholder="Metadata / IPFS CID (optional)" />
+        </div>
+        <button id="uploadInvoiceBtn">Upload invoice</button>
+      </section>
+
+      <section class="card">
+        <h2>3) Buyer + Supplier + LP actions</h2>
+        <div class="grid">
+          <input id="targetInvoiceId" type="number" placeholder="Invoice ID" />
+          <input id="depositUSDC" type="number" placeholder="LP deposit USDC" />
+        </div>
+        <button id="approveBtn">Buyer approve invoice</button>
+        <button id="financeBtn">Supplier request instant finance</button>
+        <button id="depositBtn">LP deposit to pool</button>
+      </section>
+
+      <section class="card">
+        <h2>4) Dashboard</h2>
+        <button id="refreshBtn">Refresh dashboard</button>
+        <pre id="dashboard"></pre>
+      </section>
+
+      <section class="card">
+        <h2>On-chain config</h2>
+        <pre id="chain"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Activity log</h2>
+        <pre id="log"></pre>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

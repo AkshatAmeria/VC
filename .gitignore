@@ -1,0 +1,7 @@
+node_modules/
+.env
+chainfloat.db
+artifacts/
+cache/
+coverage/
+.DS_Store
